@@ -1,0 +1,8 @@
+functions:
+  mail.send:
+    runtime: python-2.7
+    handler: mail.send
+    environment:
+      MAIL_SMTP_USER: ${env:MAIL_SMTP_USER}
+      MAIL_SMTP_PASSWORD: ${env:MAIL_SMTP_PASSWORD}
+      MAIL_SMTP_URL: ${env:MAIL_SMTP_URL}

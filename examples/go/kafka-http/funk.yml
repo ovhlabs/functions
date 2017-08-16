@@ -1,0 +1,9 @@
+functions:
+  kafka-http.pub:
+    runtime: go
+    handler: kafka.Pub
+    environment:
+      KAFKA_HOST: ${env:KAFKA_HTTP_HOST}
+      KAFKA_USER: ${env:KAFKA_HTTP_USER}
+      KAFKA_PASSWORD: ${env:KAFKA_HTTP_PASSWORD}
+      KAFKA_TOPIC: ${env:KAFKA_HTTP_TOPIC}
