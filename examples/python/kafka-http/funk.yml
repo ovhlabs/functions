@@ -1,0 +1,9 @@
+functions:
+  kafka.pub:
+    runtime: python-2.7
+    handler: kafka.pub
+    environment:
+      KAFKA_HOST: ${env:KAFKA_HOST}
+      KAFKA_USER: ${env:KAFKA_USER}
+      KAFKA_PASSWORD: ${env:KAFKA_PASSWORD}
+      KAFKA_TOPIC: ${env:KAFKA_TOPIC}

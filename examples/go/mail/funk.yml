@@ -1,0 +1,9 @@
+functions:
+  mail.send:
+    runtime: go
+    handler: mail.Send
+    environment:
+      MAIL_SMTP_USERNAME: ${env:MAIL_SMTP_USERNAME}
+      MAIL_SMTP_PASSWORD: ${env:MAIL_SMTP_PASSWORD}
+      MAIL_SMTP_HOST: ${env:MAIL_SMTP_HOST}
+      MAIL_SMTP_PORT: ${env:MAIL_SMTP_PORT}

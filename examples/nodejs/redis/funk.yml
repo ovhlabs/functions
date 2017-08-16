@@ -1,0 +1,14 @@
+#
+# Redis URL syntax: redis://x:<password>@<url>:<port>/<db_num>
+#
+functions:
+  redis.set:
+    runtime: nodejs
+    handler: redis.set
+    environment:
+      REDIS_URL: ${env:REDIS_URL}
+  redis.get:
+    runtime: nodejs
+    handler: redis.get
+    environment:
+      REDIS_URL: ${env:REDIS_URL}

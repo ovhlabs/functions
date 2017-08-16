@@ -1,0 +1,17 @@
+functions:
+  redis.set:
+    runtime: python-3.6
+    handler: redis_db.set
+    environment:
+      REDIS_URL: ${env:REDIS_URL}
+      REDIS_PORT: ${env:REDIS_PORT}
+      REDIS_DB: ${env:REDIS_DB}
+      REDIS_PASSWORD: ${env:REDIS_PASSWORD}
+  redis.get:
+    runtime: python-3.6
+    handler: redis_db.get
+    environment:
+      REDIS_URL: ${env:REDIS_URL}
+      REDIS_PORT: ${env:REDIS_PORT}
+      REDIS_DB: ${env:REDIS_DB}
+      REDIS_PASSWORD: ${env:REDIS_PASSWORD}
