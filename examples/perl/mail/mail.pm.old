@@ -1,0 +1,13 @@
+use Mail::Sendmail;
+
+
+	%mail = ( 
+		Smtp 	=> "yo%40functions.ovh:houbahouba@ssl0.ovh.net",
+		To      => "couderthomas\@gmail.com",
+        From    => "yo\@functions.ovh",
+        Subject => "sujet",
+        Message => "message"
+    );
+
+	sendmail(%mail) or die $Mail::Sendmail::error;
+	print $Mail::Sendmail::log."\n";

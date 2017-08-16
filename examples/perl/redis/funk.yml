@@ -1,0 +1,16 @@
+#
+# Redis URL syntax: <url>:<port>
+#
+functions:
+  redis.set:
+    runtime: perl
+    handler: redis.set
+    environment:
+      REDIS_URL: ${env:REDIS_URL}
+      REDIS_PASSWORD: ${env:REDIS_PASSWORD}
+  redis.get:
+    runtime: perl
+    handler: redis.get
+    environment:
+      REDIS_URL: ${env:REDIS_URL}
+      REDIS_PASSWORD: ${env:REDIS_PASSWORD}

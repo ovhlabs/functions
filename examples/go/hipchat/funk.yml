@@ -1,0 +1,7 @@
+functions:
+  hipchat.notify:
+    runtime: go
+    handler: hipchat.Notify
+    environment:
+      HIPCHAT_ROOM_ID: ${env:HIPCHAT_ROOM_ID}
+      HIPCHAT_AUTH_TOKEN: ${env:HIPCHAT_AUTH_TOKEN}

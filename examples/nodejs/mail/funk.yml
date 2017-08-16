@@ -1,0 +1,10 @@
+#
+# SMTP URL syntax: smtps://<email>:<password>@<smtp_url>
+#
+functions:
+  mail.send:
+    runtime: nodejs
+    handler: mail.send
+    environment:
+      MAIL_FROM: ${env:MAIL_FROM}
+      MAIL_SMTP_URL: ${env:MAIL_SMTP_URL}
