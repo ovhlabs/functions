@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/Shopify/sarama"
-	"github.com/thcdrt/funk-go/event"
+	"github.com/runabove/functions/go-sdk/event"
 )
 
 func Pub(event event.Event) (string, error) {

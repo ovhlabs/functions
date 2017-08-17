@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/thcdrt/funk-go/event"
+	"github.com/runabove/functions/go-sdk/event"
 )
 
 type Data struct {
