@@ -1,11 +1,11 @@
-# OVH functions examples
+# OVH Functions examples
 
-Go to [docs.functions.ovh](https://docs.functions.ovh/) if you don't have the funk-cli yet.
+Go to [docs.functions.ovh](https://docs.functions.ovh/) if you don't have the ovh-functions cli yet.
 
 ## Environment variables
 
 These examples are using environment variables.
-See corresponding funk.yml config to know which ones.
+See corresponding functions.yml config to know which ones.
 
 ## Examples
 
@@ -15,10 +15,10 @@ Set and get Redis key/value.
 [code](nodejs/redis)
 
 ```
-echo '{"k":"date","v":"'$(date)'"}' | funk-cli exec redis.set
+echo '{"k":"date","v":"'$(date)'"}' | ovh-functions exec redis.set
 OK
 
-echo '{"k":"date"}' | funk-cli exec redis.get
+echo '{"k":"date"}' | ovh-functions exec redis.get
 vendredi 21 avril 2017, 01:23:36 (UTC+0200)
 ```
 
@@ -29,7 +29,7 @@ Send an email.
 
 ```
 echo '{"to":"<email>", "subject":"Time", "text":"'$(date)'"}' | \
-  funk-cli exec mail.send
+  ovh-functions exec mail.send
 {"accepted":["<email>"],"rejected":[],"response":"250 2.0.0 OK ..."}
 ```
 
@@ -40,7 +40,7 @@ Produce a message in Kafka using the OVH Kafka HTTPS proxy.
 
 ```
 echo '{"message":"'$(date)'"}' | \
-  funk-cli exec kafka.pub
+  ovh-functions exec kafka.pub
 [{"Value":"\"vendredi 21 avril 2017, 01:13:49 (UTC+0200)\""}]
 
 ```
@@ -52,6 +52,6 @@ Send an Hipchat notification.
 
 ```
 echo '{"message":"'$(date)'"}' | \
-  funk-cli exec hipchat.notify
+  ovh-functions exec hipchat.notify
 {"statusCode":204,"location":"https://api.hipchat.com/v2/room/123456/history/7a254146-...}
 ```
