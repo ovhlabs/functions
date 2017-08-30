@@ -1,23 +1,23 @@
 deploy:
-	cd hipchat    && funk-cli deploy
-	cd kafka-http && funk-cli deploy
-	cd mail       && funk-cli deploy
-	cd redis      && funk-cli deploy
+	cd hipchat    && ovh-functions deploy
+	cd kafka-http && ovh-functions deploy
+	cd mail       && ovh-functions deploy
+	cd redis      && ovh-functions deploy
 
 exec: exec-hipchat exec-kafka-http exec-mail exec-redis
 
 exec-hipchat:
 	echo '{"message":"'$$(date)'"}' | \
-		funk-cli exec hipchat.notify
+		ovh-functions exec hipchat.notify
 
 exec-kafka-http:
 	echo $(date) | \
-		funk-cli exec kafka.pub
+		ovh-functions exec kafka.pub
 
 exec-mail:
 	echo '{"to":"hello@functions.ovh", "subject":"Time", "text":"'$$(date)'"}' | \
-		funk-cli exec mail.send
+		ovh-functions exec mail.send
 
 exec-redis:
-	echo '{"k":"date","v":"'$$(date)'"}' | funk-cli exec redis.set
-	echo '{"k":"date"}' | funk-cli exec redis.get
+	echo '{"k":"date","v":"'$$(date)'"}' | ovh-functions exec redis.set
+	echo '{"k":"date"}' | ovh-functions exec redis.get
