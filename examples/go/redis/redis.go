@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/runabove/functions/go-sdk/event"
+	"github.com/ovhlabs/functions/go-sdk/event"
 	redis "gopkg.in/redis.v5"
 )
 

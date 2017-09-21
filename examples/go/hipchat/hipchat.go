@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/runabove/functions/go-sdk/event"
+	"github.com/ovhlabs/functions/go-sdk/event"
 )
 
 type Data struct {
