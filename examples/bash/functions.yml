@@ -1,0 +1,4 @@
+functions:
+  hello:
+    runtime: bash
+    handler: log_test.hello
